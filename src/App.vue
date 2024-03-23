@@ -3,6 +3,9 @@ import TodoList from "./components/TodoList.vue";
 </script>
 
 <template>
+   <div class="">
+      <h2>Hello word Dev</h2>
+    </div>
   <div class="app-wrapper">
     <div>
       <img
