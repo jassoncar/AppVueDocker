@@ -9,7 +9,7 @@ RUN npm install
 # Copiar todos los archivos
 COPY . .
 # Construir la aplicacion lista para produccion
-RUN npm run build
+RUN npm run dev
 # Stage 2: ExposeApp
 FROM nginx:1.17.1-alpine
 # Copiar desde la "Etapa" build el contenido de la carpeta build/
@@ -19,7 +19,7 @@ COPY --from=build /usr/src/app/dist/ /usr/share/nginx/html
 # configuracion de nginx dentro del directorio indicado en nginx
 COPY --from=build /usr/src/app/nginx.conf /etc/nginx/conf.d/default.conf
 # Exponer el puerto que deseemos
-EXPOSE 30
+EXPOSE 10
 
-# CREAR ==> docker build --no-cache --progress=plain -t vue-ramapro .
-# EJECUTAR ==> docker run -d -it -p 30:30/tcp vue-ramapro
+# CREAR ==> docker build --no-cache --progress=plain -t test .
+# EJECUTAR ==> docker run -d -it -p 10:10/tcp test
