@@ -9,7 +9,7 @@ RUN npm install
 # Copiar todos los archivos
 COPY . .
 # Construir la aplicacion lista para produccion
-RUN npm run dev
+RUN npm run build
 # Stage 2: ExposeApp
 FROM nginx:1.17.1-alpine
 # Copiar desde la "Etapa" build el contenido de la carpeta build/
